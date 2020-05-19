@@ -1,0 +1,27 @@
+﻿url,github,folder,geo_level,parent_geo_level,details
+https://github.com/kent1D/svg-flags,svg-flags,flags,national,,countries original proportions
+https://github.com/kent1D/svg-flags,svg-flags,io_flags,international,,intergovernmental organizations
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/au,sub-national,au,australian states and territories
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/bq,sub-national,bq,caribbean netherlands
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/ca,sub-national,ca,canadaian provinces
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/es,sub-national,es,spanish autonomous communities
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/fr,sub-national,fr,french regions
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/gb,sub-national,gb,united kingdom countries
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/ge,sub-national,ge,georgian caucasus
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/nl,sub-national,nl,dutch provinces
+https://github.com/kent1D/svg-flags,svg-flags,regions_flags/pt,sub-national,pt,portuguese autonomous region
+https://github.com/kent1D/svg-flags,svg-flags,historical_flags,national,,flags of disappeared country or older ones
+https://github.com/lipis/flag-icon-css,flag-icon-css,flags/1x1,national,,countries square
+https://github.com/lipis/flag-icon-css,flag-icon-css,flags/4x3,national,,countries rectangular
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/au ,sub-national,au,australian states and territories
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/br ,sub-national,br ,brazillian states
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/ca ,sub-national,ca ,canadaian provinces
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/country-4x3 ,national,,countries rectangular
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/country-squared ,national,,countries square
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/de ,sub-national,de ,german states
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/es ,sub-national,es,spanish autonomous communities
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/maritime ,,,maritime 
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/racing ,,,racing
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/ru ,sub-national,ru ,"russian republics, krais, and oblasts"
+https://github.com/stevenrskelton/flag-icon,flag-icon,svg/us ,sub-national,us ,us states
+https://github.com/seanherron/Flag-Webicons,Flag-Webicons,flags,national,,countries from wikimedia

@@ -1,0 +1,67 @@
+---
+title: "The flagsvg package: Bringing together differnt sources of SVG flags from around the internet"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    fig_caption: false
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+vignette: >
+  %\VignetteIndexEntry{The flagsvg package: Bringing together differnt sources of SVG flags from around the internet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo = FALSE}
+dev.off <- function(){
+  invisible(grDevices::dev.off())
+}
+```
+
+The `flagsvg` package provides links to SVG flag files on Github and Wikimedia to enable easy importing into R. 
+
+
+## Installing `flagsvg`
+
+On Windows or macOS the package is most easily installed via CRAN.
+
+```r
+install.packages("flagsvg")
+```
+
+## Flag Search
+
+
+
+## Flag Databases
+
+The data frames `github_flags` and `wikimedia_flags` are the two main features of the `flagsvg` package each contain links to SVG flag files. Both have common columns
+
+    - `flag_url` for the url of the flag SVG file
+    - `geo_level` for 
+    
+## Reading SVG files in to R
+
+Given the URL or set of URLs from a subset of the `flag_url` column of either of `github_flags` and `wikimedia_flags`, files can read into R using the `image_read_svg()` function in the `magick` package (other functions also exist in R to read in SVG files).
+
+```{r, message=FALSE, warning=FALSE, eval = require(rsvg, quietly = TRUE)}
+library(flagsvg)
+library(magick)
+library(tidyverse)
+
+flags_gitub %>%
+  slice(1) %>%
+  pull(flag_url) %>%
+  image_read_svg(height = 300)
+```
+
+```{r}
+flags_gitub %>%
+  filter(geo_level == "maritime") %>%
+  pull(flag_url) %>%
+  image_read_svg(height = 300) %>%
+  image_animate(optimize = TRUE, fps = 5)
+```
