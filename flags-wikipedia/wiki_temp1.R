@@ -65,8 +65,15 @@ get_flags <- function(u){
       .[tab_sp] %>%
       .[[1]] %>%
       pull(2) %>%
-      str_subset(pattern = "Flag of")
+      str_subset(pattern = "Flag of"),
+    main_page = h %>%
+      html_nodes(".thumbcaption") %>%
+      html_nodes("a") %>%
+      html_attr("href") %>%
+      str_subset(pattern = ".svg", negate = TRUE) %>%
+      .[1]
   )
+
 
   tab_v <- x %>%
     filter(id == "Flag_variants",
@@ -99,12 +106,29 @@ get_flags <- function(u){
 }
 
 d2 <- d1 %>%
+  # these dropped countries are historical aliases and have modern equivalents
   filter(!str_detect(string = page_name, pattern = "Swaziland")) %>%
   filter(!str_detect(string = page_name, pattern = "Burma")) %>%
   filter(!str_detect(string = page_name, pattern = "Siam")) %>%
   mutate(flags = map(.x = page_url, .f = ~get_flags(u = .x)))
 
 d3 <- d2 %>%
-  unnest(flags)
-  mutate(d)
-write_csv(d3, "./flags-wikipedia/flags1.csv")
+  unnest(flags) %>%
+  rename(main_page_url = main_page)
+write_excel_csv(d3, "./flags-wikipedia/flags1.csv")
+
+d4 <- d3 %>%
+  filter(!is.na(main_page_url)) %>%
+  select(category, main_page_url) %>%
+  distinct()
+
+get_flag_info <- function(u){
+  # u = d4$main_page_url[i]; u
+  message(u)
+  h <- paste0("https://en.wikipedia.org", u) %>%
+    read_html()
+
+  h %>%
+    html_nodes(".infobox-label , .infobox-data")
+}
+
